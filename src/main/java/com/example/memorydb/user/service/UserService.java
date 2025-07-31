@@ -25,7 +25,7 @@ public class UserService {
     }
 
     public void delete(Long id){
-        userRepository.delete(id);
+        userRepository.deleteById(id);
     }
 
     public Optional<UserEntity> findById(Long id){
@@ -33,6 +33,6 @@ public class UserService {
     }
 
     public List<UserEntity> findScore(int score){
-        return userRepository.findAllScoreGreaterThen(score);
+        return userRepository.findAllByScoreGreaterThan(score);
     }
 }
